@@ -41,6 +41,7 @@ def main():
     utils.plot_cum_inertias(lambdas)
     utils.plot_indv_factor_map(Z,axe_x,axe_y)
     utils.plot_var_facrot_map(lambdas,Q,utils.SUBJECTS_S2,axe_x,axe_y)
+    utils.plot_3d(Z,V) # STATIC FUNCTION TO SEE THE RANK ON PROJ
     
     print("End ...")
     

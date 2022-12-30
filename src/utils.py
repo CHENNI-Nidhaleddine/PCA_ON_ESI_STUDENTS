@@ -138,3 +138,22 @@ def plot_var_facrot_map(lambdas,Q,labels,axe_x,axe_y):
     plt.xlabel(f"Dim {axe_x+1} ({round(lambdas[axe_x]/np.sum(lambdas)*100,2)}%)")
     plt.ylabel(f"Dim {axe_y+1} ({round(lambdas[axe_y]/np.sum(lambdas)*100,2)}%)")
     plt.show()
+
+def plot_3d(Z,V):
+    fig = plt.figure(figsize = (10, 7))
+    ax = plt.axes(projection ="3d")
+    idx=np.array((0,1,2,3,4,5,CLASSEMENT-1,21,22,150))
+    arr=np.zeros(10)+0.7
+    arr[6]=1
+    ax.scatter3D(Z[idx,0],Z[idx,1], Z[idx,2], c=arr )
+    plt.title("3D scatter plot")
+    i=4 #PROJ
+    ax.plot([0,-V[i,0]],[0,-V[i,1]],[0,-V[i,2]])
+    ax.text(-V[i,0],-V[i,1],-V[i,2],SUBJECTS_S2[i])
+    i=7 #SYS
+    ax.plot([0,-V[i,0]],[0,-V[i,1]],[0,-V[i,2]])
+    ax.text(-V[i,0],-V[i,1],-V[i,2],SUBJECTS_S2[i])
+    i=5 #LANG
+    ax.plot([0,-V[i,0]],[0,-V[i,1]],[0,-V[i,2]])
+    ax.text(-V[i,0],-V[i,1],-V[i,2],SUBJECTS_S2[i])
+    plt.show()
